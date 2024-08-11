@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ideal Pet Test</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>Find Your Ideal Pet</h1>
+
+    <div class="container">
+      <!-- Form Column -->
+      <div class="form-container">
+        <form id="petTestForm">
+          <div>
+            <label>1. How much space do you have for a pet?</label><br />
+            <input type="radio" name="space" value="0" /> Very limited space (e.g., apartment)<br />
+            <input type="radio" name="space" value="5" /> Moderate space (e.g., small house)<br />
+            <input type="radio" name="space" value="10" /> Large space (e.g., spacious house with yard)
+          </div>
+          <div>
+            <label>2. How much time can you dedicate to exercising your pet?</label><br />
+            <input type="radio" name="exercise" value="0" /> Very little time<br />
+            <input type="radio" name="exercise" value="5" /> Some time each day<br />
+            <input type="radio" name="exercise" value="10" /> A lot of time for daily exercise
+          </div>
+          <div>
+            <label>3. How important is ease of grooming to you?</label><br />
+            <input type="radio" name="grooming" value="0" /> Very important (prefer low-maintenance pets)<br />
+            <input type="radio" name="grooming" value="5" /> Somewhat important (willing to groom regularly)<br />
+            <input type="radio" name="grooming" value="10" /> Not important (willing to invest time in grooming)
+          </div>
+          <div>
+            <label>4. What noise level is acceptable to you?</label><br />
+            <input type="radio" name="noise" value="0" /> Prefer a quiet pet<br />
+            <input type="radio" name="noise" value="5" /> Moderate noise is okay<br />
+            <input type="radio" name="noise" value="10" /> Don’t mind loud noises
+          </div>
+          <div>
+            <label>5. How much interaction do you want from your pet?</label><br />
+            <input type="radio" name="interaction" value="0" /> Prefer a more independent pet<br />
+            <input type="radio" name="interaction" value="5" /> Moderate interaction (some playtime and attention)<br />
+            <input type="radio" name="interaction" value="10" /> Very interactive and affectionate pet
+          </div>
+          <button type="button" onclick="calculateScore()">Find My Ideal Pet</button>
+        </form>
+
+        <div id="result"></div>
+
+        <!-- Registration Form -->
+        <div id="registrationForm" style="display: none">
+          <h2>Register for Adoption</h2>
+          <form id="registration">
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name" required /><br />
+            <div id="errorname"></div>
+            <label for="age">Age:</label><br />
+            <input type="text" id="age" name="age" required /><br />
+            <div id="errorage"></div>
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" required /><br />
+            <div id="erroremail"></div>
+            <label for="phone">Phone number:</label><br />
+            <input type="text" id="phone" name="phone" /><br />
+            <div id="errorphone"></div>
+            <button type="button" onclick="registrationValidation()">Submit</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="image-container">
+        <img id="rodentImage" src="img/rodent.jpg" />
+        <!-- Photo by <a href="https://unsplash.com/@sweetmangostudios?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Ricky  Kharawala</a> on <a href="https://unsplash.com/photos/selective-focus-photography-of-brown-hamster-adK3Vu70DEQ?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
+
+        <img id="catImage" src="img/cat.jpg" />
+        <!-- Photo by <a href="https://unsplash.com/@sadmax?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Amber Kipp</a> on <a href="https://unsplash.com/photos/selective-focus-photography-of-orange-and-white-cat-on-brown-table-75715CVEJhI?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
+
+        <img id="dogImage" src="img/large_dog.jpg" />
+        <!-- Photo by <a href="https://unsplash.com/@o5ky?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Oscar Sutton</a> on <a href="https://unsplash.com/photos/dog-running-on-beach-during-daytime-yihlaRCCvd4?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a> -->
+      </div>
+    </div>
+
+    <script src="js/pet_test.js"></script>
+    <script src="js/registration_validation.js"></script>
+    <script src="js/animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </body>
+</html>
