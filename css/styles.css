@@ -6,21 +6,20 @@ body {
 }
 
 h1 {
-    color: #007bff;
+    color: #ff6f61;
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 30px;
     position: relative;
 }
 
-/* h1::before {
-    content: url('../img/pet_icon.png'); 
+h1::before {
+    content: url('img/pet_icon.png'); /* Replace with the path to your pet icon */
     position: absolute;
-    left: -40px;
+    left: calc(50% - 70px); /* Adjust according to icon size */
     top: -10px;
     transform: scale(0.8);
-} 
-*/
+}
 
 .container {
     display: flex;
@@ -28,11 +27,20 @@ h1 {
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .form-container, .image-container {
     flex: 1;
     margin: 0 20px;
+    max-width: 48%; /* Ensure the columns are responsive */
+}
+
+.image-container img {
+    width: 150px;
+    height: auto; /* Ensure the aspect ratio is maintained */
+    margin: 10px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 form {
@@ -76,6 +84,7 @@ button:hover {
 
 #registrationForm {
     display: none;
+    margin-top: 20px;
 }
 
 input[type="text"], input[type="number"], input[type="email"] {
@@ -91,15 +100,20 @@ input[type="text"], input[type="number"], input[type="email"] {
 }
 
 .image-container img {
-    width: 150px;
-    height: 80%;
-    margin: 10px;
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin: 20px;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .hidden {
     opacity: 0;
     transform: scale(0);
+    display: none;
+}
+
+#rodentImage, #catImage, #dogImage {
+    display: none; /* Ensure images are hidden initially */
 }
 
 .enlarge {

@@ -28,10 +28,10 @@ function calculateScore() {
     idealPet = "Larger dogs or more interactive pets like parrots or rabbits.";
   }
 
-  document.getElementById("result").innerText = `Your ideal pet is: ${idealPet}`;
-  document.getElementById("registrationForm").style.display = "block";
+  // Reset the result and registration form
+  document.getElementById("result").innerText = "";
+  document.getElementById("registrationForm").style.display = "none";
 
   // Trigger animation based on the score
-  console.log(score);
   triggerAnimation(score);
 }
