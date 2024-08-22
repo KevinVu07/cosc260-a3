@@ -6,6 +6,8 @@ function triggerAnimation(score) {
       transform: "",
       left: "",
       display: "none", // Ensure they are hidden initially
+      width: "450px", // Ensuring uniform size
+      height: "300px", // Ensuring uniform size
     });
 
     let message = "";
@@ -19,7 +21,7 @@ function triggerAnimation(score) {
       message = "Your ideal pet is a low-maintenance pet like a fish, reptile, or rodent!";
 
       // Remove hidden class and start the fadeIn animation
-      $(imageSelector).removeClass("hidden").css("display", "block").hide().fadeIn(3000);
+      $(imageSelector).removeClass("hidden").css("display", "block").hide().fadeIn(10000);
     } else if (score <= 25) {
       // Cats or small to medium-sized dogs
       imageSelector = "#catImage";
@@ -27,7 +29,7 @@ function triggerAnimation(score) {
       message = "Your ideal pet is a cat or a small to medium-sized dog!";
 
       // Remove hidden class and start the slideDown animation
-      $(imageSelector).removeClass("hidden").hide().slideDown(3000);
+      $(imageSelector).removeClass("hidden").hide().slideDown(10000);
     } else {
       // Larger dogs, parrots, or rabbits
       imageSelector = "#dogImage";
@@ -43,7 +45,7 @@ function triggerAnimation(score) {
           position: "relative",
           left: "-50px",
         })
-        .animate({ opacity: 1, left: "+=50" }, 3000);
+        .animate({ opacity: 1, left: "+=50" }, 10000);
     }
 
     // Display the score in the chosen color

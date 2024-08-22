@@ -1,8 +1,14 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f9fa;
+    background-image: url('../img/pet_background.jpg');
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background fixed while scrolling */
     margin: 0;
     padding: 20px;
+    color: #333;
 }
 
 h1 {
@@ -37,18 +43,23 @@ h1::before {
 }
 
 .image-container img {
-    width: 150px;
-    height: auto; /* Ensure the aspect ratio is maintained */
+    width: 450px; /* Set a fixed width */
+    height: 300px; /* Set a fixed height */
+    object-fit: cover; /* This will crop the image to fit the container while preserving aspect ratio */
     margin: 10px;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 form {
-    background-color: #fff;
+    background-color: #ebf2ea;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+}
+
+.error p {
+    color: red;
 }
 
 label {
