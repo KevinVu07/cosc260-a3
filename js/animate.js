@@ -56,7 +56,18 @@ function triggerAnimation(score) {
 
     // Delay the display of the registration form for 10 seconds
     setTimeout(function () {
-      $("#registrationForm").fadeIn(1000);
-    }, 10000); // Adjust the delay to match the total duration of the animations
+      $("#registrationForm").fadeIn(1000, function () {
+        // Scroll to the form after it appears
+        $("html, body").animate(
+          {
+            scrollTop: $("#registrationForm").offset().top,
+          },
+          1000
+        );
+      });
+
+      // Add a prompt for the user to complete the form
+      $("#result").append("<p>Please complete the registration form below to find your perfect pet!</p>");
+    }, 10000);
   });
 }
